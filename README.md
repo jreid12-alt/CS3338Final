@@ -8,6 +8,6 @@ Content of the repo:
  - #User Manual
  - Design Spec(Workflow)
  - Snapshot Objective
- - Testrail Documents
+ - #Testrail Documents
  - Jira
- - LaTeX
+ - #LaTeX
