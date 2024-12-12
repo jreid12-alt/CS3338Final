@@ -1,0 +1,441 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx} % For including images
+\usepackage{hyperref} % For clickable links in references
+\usepackage{longtable} % For multi-page tables
+\usepackage{geometry} % To adjust margins
+\geometry{margin=1in}
+\usepackage{tocloft} % For customizing table of contents
+
+\begin{document}
+
+% Cover Page
+\begin{titlepage}
+    \centering
+    {\Huge \textbf{Software Design Document (SDD)}}\\
+    \vspace{2cm}
+    \textbf{Team Name: Group 2}\\
+    
+    \textbf{Jacob Vasquez, Dominick Daito Jr. , Jolen Reid, Francis Agyemang}\\
+    \vspace{1cm}
+    \textbf{Date: December 5, 2024}\\
+    
+\end{titlepage}
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+% Version Description
+\section*{Version Description}
+\begin{longtable}{|c|p{8cm}|c|}
+\hline
+\textbf{Version Number} & \textbf{Description} & \textbf{Date Added} \\
+\hline
+1.0 & Initial draft & December 5, 2024 \\
+\hline
+2.0 & Second draft & \today \\
+\hline
+\end{longtable}
+
+% Sections
+\section{Introduction}
+\subsection{Purpose of the Document}
+This document is to explain in detail the functions that the application will perform. The
+document will inform readers as to what the application will do. The purpose of this product is to
+visualize pedestrian and bicycle data to find and identify problem areas and the safest navigation
+routes.
+\subsection{Intended Audience}
+The main audience of the software requirements specifications document are developers, project
+managers, and testers. The SRS contains information about each project such as what the project
+is, what each of its UI elements should do, and what dependencies each project may have. It is
+suggested that you first look at the table of contents for any topics you may be looking for, if not
+then quickly skim the document to get a better understanding of the projects. If you are a
+developer or project manager it is suggested that you look into section 4 of the SRS so that you
+may check if project requirements are being met. If you are a tester it is suggested that you look
+into section 3 so that you have a better understanding of how the user interfaces should work.
+\subsection{Overview of the System}
+I. Metro Bike Share Real Time (Web and Android App)
+Angeles area. This is done by modeling real-time Metro Bike Share stations
+within the city, in conjunction with bike accidents around the city. Currently, the idea is to allow the user to draw the “safest” path by avoiding areas of the city
+where major accidents have occurred.
+II. Bicycle Accident Visualization
+III. Metro Bike Share Historical Data Visualization (Web and Android App)
+stations are shown as feature layers on the map. Clicking the station displays
+information such as number of trips and busiest day. Station icons vary in size and
+color depending on what information we want to show.
+
+\section{System Architecture}
+\subsection{Workflow of the System}
+Level 0: Data Engines Overview
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{Screenshot 2024-12-02 at 3.51.55 PM.png}
+    \label{fig:enter-label}
+\end{figure} 
+\subsection{Breakdown of Components}
+\begin{itemize}
+  \item Use of a product(programming language, database, library, etc)
+    \begin{itemize}
+    \item Java
+    \item JavaScript
+    \item HTML CSS
+    \item Python
+    \item Pandas Library
+    \item SkLearn
+    \item Google Maps API
+    \item Android Studio
+    \item Maps SDK for Android
+    \item Maps SDK for Android Utility Library
+    \item Directions API
+    \item Firebase Database
+    \item ArcGIS
+    \item JSON/GeoJSON
+    \item ArcGIS Runtime SDK
+  \end{itemize}
+\end{itemize}
+\begin{itemize}
+  \item Reuse of existing software components to implement various parts or features of the system
+    \begin{itemize}
+    \item This software is the first version, no reuse of existing software components
+  \end{itemize}
+\end{itemize}
+\begin{itemize}
+  \item Plans for extending or enhancing the software
+    \begin{itemize}
+    \item Collect data in real-time
+    \item Create a database to hold all data
+    \item Use Python libraries to manipulate the data
+  \end{itemize}
+\end{itemize}
+\begin{itemize}
+  \item User Interface paradigms (or system input and output models)
+    \begin{itemize}
+    \item Physical mouse required to interact with the application
+    \item Computer is required to use the application
+  \end{itemize}
+\end{itemize}
+\begin{itemize}
+  \item Hardware and/or software interface paradigms
+    \begin{itemize}
+    \item User’s interface will be updated using JavaScript
+  \end{itemize}
+\end{itemize}
+\begin{itemize}
+  \item Error detection and recovery
+    \begin{itemize}
+    \item The error can be checked in the console log in order to see if the data loaded
+  \end{itemize}
+\end{itemize}
+\begin{itemize}
+  \item External databases and/ or data storage management and persistence
+    \begin{itemize}
+    \item Made use of historical data using Geohub
+    \item Made use of real time data from Metro Bike Share website
+    \item Firebase
+  \end{itemize}
+\end{itemize}
+\begin{itemize}
+  \item Management of other resources
+    \begin{itemize}
+    \item No other external resources used
+  \end{itemize}
+\end{itemize}
+
+\section{Design Considerations}
+Listed are the various issues that need to be addressed before attempting to devise a complete design solution:
+\begin{enumerate}
+    \item Metro Bike Share Real Time (Web-App)                  
+    \begin{itemize}
+        \item Dissect the Directions Service object returned by the Maps Javascript API so that we can manipulate it to our liking.
+        \item Fully understand the Maps Javascript API so that it may be used to its fullest potential    
+    \end{itemize}
+    \item Metro Bike Share Real Time (Android-App)
+        \begin{itemize}
+            \item Dissect the JSON object returned by the Directions API so that we can manipulate it to our liking.
+            \item  Decoding the encoded polyline paths to plot the polylines on our map.
+            \item Find an effective way to switch between fragments while remaining in the same activity \end{itemize}
+    \item Bicycle Accident Visualization
+    \item Metro Bike Share Historical Data Visualization (Web-App)
+        \begin{itemize}
+            \item Get the data  Decoding the encoded polyline paths to plot the polylines on our map.
+            \item Find an effective way to switch between fragments while remaining in the same activity \end{itemize}
+    \item Historical data visualization for Metro bike share (Android App) 
+        \begin{itemize}
+            \item Get the data from the Metro Bike Share Web page and be able to change and manipulate the CSV files to display the data we want to show.
+            \item Understand the Android ArcGIS Runtime SDK API.
+        \end{itemize}
+\end{enumerate}
+    \subsection{General Constraints}
+        The list describes the global limitations or constraints that have a significant impact on the design of the system’s software:
+            \begin{itemize} 
+                \item Software Environment
+                \begin{itemize}
+                    \item No Licensed Google Maps API 
+                \end{itemize}
+                \item End-User Environment
+                    \begin{itemize}
+                        \item Android SDK greater than 16 required.
+                         \item Basic computer inputs and outputs shall be provided by the user such as mouse, keyboard, monitor screen, and desktop.
+                         \item End-users must have valid accounts from Esri ArcGIS before using the application.
+                    \end{itemize}
+                \item Standards Compliance
+                    \begin{itemize}
+                        \item Data Visualization Engine shall follow the standards-compliance of World Wide Web.
+                    \end{itemize}
+                \item Interoperability Requirements
+                    \begin{itemize}
+                        \item Data is directly requested from GeoHub or Metro Bike Share Website using JSON
+                    \end{itemize}
+                \item Data Repository and Distribution Requirements
+                    \begin{itemize}
+                        \item Currently, Liaison has not provided real-time and historical data \end{itemize}
+            \end{itemize}
+    \subsection{Goals and Guidelines}
+        Listed are the goals, guidelines, and principles that embody the design of the system software:
+            \begin{itemize}
+                \item The application should strive to achieve Vision Zero’s goal
+                \item The application should help visualize data using a map
+                \item The application should make use of historical and real time data.
+                \item The application should help users reach their destination safely.
+                \item Deadline
+                    \begin{itemize}
+                        \item Delivery Date : May 2020
+                        \item Milestone 1
+                        \begin{itemize}
+                            \item Initial Senior Design Meeting
+                            \item Launch Day 
+                            \item Meeting Liason
+                            \item Project Requirements
+                            \item Discuss meeting times as a group
+                            \item Assigned team member roles
+                            \item Meeting with advisor
+                            \item Discuss technologies to implement
+                            \item Tutorials in ArcGIS
+                            \item Research Data Visualization on ArcGIS
+                            \item Develop a demo to practice ArcGIS
+                        \end{itemize}
+                        \item Milestone 2
+                            \begin{itemize}
+                                \item Introduction to Github
+                                    \begin{itemize}
+                                        \item Make use of GeoHub data to display dataset on a map using ArcGIS
+                                    \end{itemize}
+                                \item Find an alternative to ArcGIS directions API
+                                    \begin{itemize}
+                                        \item Googles Direction API work with a free limited key
+                                    \end{itemize}
+                                \item Port the ArcGIS web project to the Google Maps API
+                                \item Use metro Bike Share data to visualize pedestrian data
+                                    \begin{itemize}
+                                        \item Use GeoJSON from Metro’s website to help with real time data
+                                    \end{itemize}
+                                \item Design and Develop Android App of MBSRT web-app
+                                    \begin{itemize}
+                                        \item Utilized Android Studio to begin development
+                                        \item Implemented Maps SDK for Android
+                                        \item Implemented Firebase Database and Auth into our applications.
+                                    \end{itemize}                
+                            \end{itemize}
+                        \item Milestone 3
+                            \begin{itemize}
+                                \item Incorporate machine learning algorithms to predict bike availability and safest path.
+                                \item Incorporate the use Jupyter Notebook and JavaScript
+                                \item Use python and Sklearn libraries to predict data
+                            \end{itemize}
+                    \end{itemize}
+            \end{itemize}
+\section{Architectural Strategies}
+\begin{itemize}
+    \item Use of product (programming language, database, library, etc.)
+        \begin{itemize}
+            \item Java
+            \item JavaScript
+            \item HTMl,CSS
+            \item Python
+            \item Pandas Library
+            \item Sklearn Library
+            \item Google Maps API
+            \item Android Studio
+            \item Maps SDK for Android
+            \item Maps SDK for Android Utility Library
+            \item Directions AP
+            \item Firebase Database
+            \item ArcGIS
+            \item JSON/GeoJSON
+            \item ArcGIS Runtime SDK
+        \end{itemize}
+    \item Reuse of existing software components to implement various parts or features of the system
+        \begin{itemize}
+            \item This software is first version, no reuse of existing software components
+        \end{itemize}
+    \item Plans for extending or enhancing the software
+        \begin{itemize}
+            \item Collect data in real time
+            \item Create a database 
+            \item use python libraries. 
+        \end{itemize}
+    \item User interface paradigms
+        \begin{itemize}
+            \item Physical mouse required to interact with the application
+            \item Computer is required to use the application
+        \end{itemize}
+    \item Hardware and/or software interface paradigms
+        \begin{itemize}
+            \item User’s interface will be updated using JavaScript
+        \end{itemize}
+    \item Error detection and recovery
+        \begin{itemize}
+            \item The error can be checked in the console log in order to see if the data loaded
+        \end{itemize}
+    \item External databases and/ or data storage management and persistence
+        \begin{itemize}
+            \item Made use of historical data using Geohub
+            \item Made use of real time data from Metro Bike Share website
+            \item Firebase
+        \end{itemize}
+    \item Management of Other Resources
+        \begin{itemize}
+            \item No other external resources used
+        \end{itemize}
+\end{itemize}
+\section{Policies and Tactics}
+The tactics used to implement our applications start with accessing APIs and storing the results.
+Next, these data are processed in a way that is beneficial to building multiple UI elements such as
+the station markers, dropdown list, and the station list.
+\subsection{Choice of which specific products used}
+Esri ArcGIS licenses, Maps Javascript API, Maps SDK for Android, and Python shall be used
+for visualization of data. Jupyter Notebook, Excel and Maps SDK for Android Utility Library
+will be used for data processing. Visual Studio Code will be used for bringing together all
+HTML, CSS and Javascript elements. Android Studio will be used to build and test android
+components
+\subsection{Plans for ensuring requirements traceability}
+The requirements of the application shall be traceable. The source code can be traced via GitHub
+version control.
+\subsection{Plans for testing the software}
+In the future we plan to test various machine learning classifiers. Choosing the classifier that
+yields the highest accuracy for both bike availability and the safety of a bike route.
+\section{Detailed System Design}
+\subsection{Data Preprocessing}
+    \subsubsection{Responsibilities}
+        The main responsibility of this module is to fetch the data set that will be used for our maps via an API request. This data will then be stored and filtered for specific data.
+    \subsubsection{Constraints}
+        There may be missing features and labels from the preprocessed data because the data is inconsistent and flawed with null data. The data sets could be too large and affect the performance. Larger data sets are also more expensive to process.
+    \subsubsection{Composition}
+        The list below contains widget components for users to interface with the application:
+        \begin{itemize}
+            \item Zoom in and out to change the map visibility
+            \item Reset map to its original format
+            \item Toggle a heatmap layer on or off
+            \item Filter stations by cities
+            \item Draw polylines on the map based on their safety rating
+            \item Display directions and directions polyline
+            \item Display current location (require GPS to be enabled)
+            \item Reference the Legend
+            \item Select which data layer to be displayed
+            \item Filter by date and time
+            \item Search for a location in the map
+            \item User Profile
+        \end{itemize}
+    \subsubsection{Uses/Interaction}
+        Our maps are used to visualize Metro Bike Share stations around the greater Los Angeles area. Our maps also visualize bike accidents that occurred in the greater Los Angeles area. Maps can be used to find stations with available bikes, and allow the user to draw the “safest” path for him/her.
+    \subsubsection{Resources}
+        The following data are used to visualize:
+        \begin{itemize}
+            \item MetroBikeShare.json
+            \item bikeAccidents.csv
+            \item metroBikeShareData.csv
+            \item interface layout.xml
+        \end{itemize}
+    \subsubsection{Interface/Exports}
+        The visualized data is displayed on a map layer created from ArcGIS JavaScript API, Maps Javascript API and Maps SDK for Android.
+\section{Detailed Lower level Component Design}
+    \subsection{Visualization Component}
+    \subsubsection{Classification}
+        The component is a visualization map of datasets.
+    \subsubsection{Processing Narrative (PSPEC)}
+        \begin{enumerate}
+            \item Metro Bike Share Real Time (Web-App)
+            Applications get data sets from GeoHub and display them on the map. The user can thenfilter by city or by clicking specific stations. The user can then choose if they want adirect path from their position to their destination, if they allow Google to access theirlocation, or they can choose to draw their own path. Paths displayed between two points will be calculated for a safety rating, then displayed on the map.
+            \item Metro Bike Share Real Time (Android-App)
+            As for the android application the user will be prompted to sign in or sign up. Once theuser has successfully logged in the map will be visible with its features. The user shall beable to access his/her current location to find the safest possible route to the bike station.Once the application has access to the user’s location the stations closest to the user shallbe highlighted blue, in order to show stations within the users radius. The user will alsobe able to click on a filterable list that will contain all the Metro Bike stations availablefor the user to search or click to get the safest possible directions to the station. Uponclicking on a station our algorithm will display 3 best routes for the user to get to thestation using a safety rating based on the bike accidents GeoJson dataset, the directionswill also be provided. The application will also allow the user to create a custom pathupon clicking the paths button, that will allow the user to choose a starting station andend point station. The application will also provide the user with the ability to have aprofile that will be customizable from the user picture to the user name and other credentials.
+        \end{enumerate}
+    \subsubsection{Interface Description}
+    Interactive map allowing the user to filter through specific fields selected.
+    \subsubsection{Processing Detail}
+    Manipulating each dataset to extract the fields needed for outputting data onto the map.
+    \subsubsection{Design Class Hierarchy}
+    The visualization component falls below the data pre-processing component.
+    \subsubsection{Restrictions/Limitations}
+     Datasets are too large and have some null fields. Some datasets are not update.
+    \subsubsection{Performance Issues}
+    Station pictures are all the same, does not show actual location
+    \subsubsection{Design Constraints}
+    Can only do as much as what Google Maps API is capable of
+    \subsubsection{Processing Detail For Each Operation}
+    \begin{itemize}
+        \item Geohub data set - filtered for bike accidents only
+        \item Metro Bike Share API Call - destructured object for Geojson object
+        \item City filters - filter markers for only stations within that city
+    \end{itemize}
+\section{User Interface}
+\subsection{How to Use the System}
+From the user interface, the user can:
+\begin{itemize}
+  \item Zoom in and out to change map visibility
+  \item Hovering over the marker displays an info window about the station
+  \item User Location button to prompt the user for their location
+  \item Reset map to its original state using the reset button
+  \item Toggle heat map on and off
+  \item Draw a Polyline to allow the user to draw his/her path by clicking anywhere on the map. This can be toggled on/off
+  \item Click on the station to be highlighted and its corresponding marker will be animated
+  \item Filter by city with the drop-down menu
+  \item Click on a station marker to display directions and a polyline of how to get from the user’s location to the clicked station
+  \item Use Google Map’s default features
+\end{itemize}
+\subsection{Database Design and Explanation}
+No databases are used in our projects for now.
+\subsection{Screenshots (Optional)}
+\section{Glossary}
+\begin{longtable}{|c|p{10cm}|}
+\hline
+\textbf{Acronym} & \textbf{Definition} \\
+\hline
+UI & User Interface \\
+API & Application Programming Interface \\
+DB & Database \\
+ArcGis & Esris all in one solution to work with geographic information \\
+AISC & A.I. for Smart Cities: Pedestrian and Bicycle Safety \\
+CSS & Cascading Style Sheet is a style sheet that is used to describe the presentation of a markup language. \\
+CSV & Comma Separated Values. File format that is used to store tabular data such as spreadsheets or databases. \\
+DFD & Data Flow Diagram. \\
+Firebase & BaaS for cloud storage and authentication.
+HTML & BaaS for cloud storage and authentication \\
+HTTP & Hypertext Transfer Protocol is an application protocol for distributed, collaborative, hypermedia information systems. \\
+Javascript & A programming language that is heavily used for web scripts. \\
+LADOT & Los Angeles Department of Transportation. \\
+MBSRT & Metro Bike Share Real Time \\
+Machine learning & Predictive mathematical models are used for predictions. \\
+Operating System & The software allows any computer to communicate, modify, and terminate hardware and software communications based on end-users decisions. \\
+Python & A general-purpose programming language that can also be used to program web applications and data analytics applications.\\
+Runtime & The time when an application is executed. \\
+SDD & Software Design Document. \\
+SRS  & Software Requirements Specifications. \\
+SDK & Software Development Kit. \\
+\hline
+\end{longtable}
+
+\section{References}
+\begin{itemize}
+    \item ArcGIS All references to ArcGIS services. https://doc.arcgis.com/en/
+    \item GeoHub Data collection for the city of Los Angeles http://geohub.lacity.org/
+    \item Metro Bike Data Anonymized Metro Bike Share trip data for data collection https://bikeshare.metro.net/about/data/
+    \item The Maps JavaScript API lets you customize maps with your own content and imagery for display on web pages and mobile devices. The Maps JavaScript API features four basic map types (roadmap, satellite,hybrid, and terrain) which you can modify using layers and styles, controls and events, and various services and libraries. https://developers.google.com/maps/documentation/javascript/tutorial
+    \item Android Studio Used to develop MBSRT android version. https://developer.android.com/docs
+    \item Maps SDK for Android. Adds functionality to elements within the map https://developers.google.com/maps/documentation/android-sdk/intro
+    \item Google’s Directions API Used to retrieve a JSON object containing directions information between points https://developers.google.com/maps/documentation/directions/start
+    \item Maps SDK for Android Utility Library Used to decode the directions polyline from the Directions JSON object. Used to add heatmap layer over map https://developers.google.com/maps/documentation/android-sdk/utility
+    \item Firebase Used to authenticate and store user data. https://firebase.google.com/
+    \item Jupyter Notebook Organize and manipulate data. https://jupyter.org/
+\end{itemize}
+
+\end{document}

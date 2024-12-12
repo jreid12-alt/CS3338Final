@@ -1,0 +1,161 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\title{User Manual for Metro Bike Share}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Table of Contents}
+\begin{enumerate}
+    \item Overview of Metro Bike Share
+    \item Getting Started
+    \begin{enumerate}
+        \item Accessing the Web Application
+        \item Installing and Using the Android App
+    \end{enumerate}
+    \item Core Features
+    \begin{enumerate}
+        \item Real-Time Bike Availability
+        \item Route Planning \& Directions
+        \item Historical Data Visualization
+        \item Accident Visualization
+    \end{enumerate}
+    \item User Interface Walkthrough
+    \begin{enumerate}
+        \item Web App Interface
+        \item Android App Interface
+    \end{enumerate}
+    \item Managing Your Account
+    \begin{enumerate}
+        \item Creating and Managing Your Account
+        \item Viewing Trip History (Web and Android)
+    \end{enumerate}
+    \item Advanced Features
+    \begin{enumerate}
+        \item Customizing Bike Routes
+        \item Filtering Accident Locations
+        \item Exporting Data
+    \end{enumerate}
+    \item Troubleshooting
+    \item FAQs
+    \item Contact Support
+\end{enumerate}
+
+\section{Overview of Metro Bike Share}
+Metro Bike Share is a bike rental system providing convenient, eco-friendly transportation options in urban areas. The system offers both \textbf{real-time bike availability} and \textbf{historical data visualization} through the \textbf{Web Application} and \textbf{Android App}. Additionally, users can access \textbf{route planning} and \textbf{accident data} to improve cycling safety.
+
+\subsection*{Key Features}
+\begin{itemize}
+    \item \textbf{Real-Time Bike Availability}: See available bikes at nearby stations.
+    \item \textbf{Route Planning}: Plan your route and get bike directions.
+    \item \textbf{Accident Visualization}: View historical bike accident data on maps.
+    \item \textbf{Historical Data}: Access CSV data for bike usage and trends.
+\end{itemize}
+
+\section{Getting Started}
+\subsection{Accessing the Web Application}
+\begin{enumerate}
+    \item Open a web browser and go to the \textbf{Metro Bike Share Website}.
+    \item If you don’t have an account, click on \textbf{Sign Up} and follow the instructions to create an account.
+    \item Log in using your credentials (username/email and password).
+    \item After logging in, you can begin accessing real-time bike availability, route planning, and historical data visualizations.
+\end{enumerate}
+
+\subsection{Installing and Using the Android App}
+\begin{enumerate}
+    \item \textbf{Download the App}: Visit the \textbf{Google Play Store} and search for “Metro Bike Share.” Click \textbf{Install} to download and install the app on your Android device.
+    \item \textbf{Create an Account}: Open the app and select \textbf{Sign Up} to create a new user account. Alternatively, if you already have an account, click \textbf{Login}.
+    \item \textbf{Getting Started with the App}: After logging in, you can begin viewing available bikes, planning routes, and accessing accident data directly on the map.
+\end{enumerate}
+
+\section{Core Features}
+
+\subsection{Real-Time Bike Availability}
+\begin{itemize}
+    \item \textbf{Web App}: On the main dashboard, view the interactive map with bike stations marked as pins. The stations will show the number of available bikes in real-time.
+    \item \textbf{Android App}: The home screen displays a map with available bikes at nearby stations. Tap on any station to view detailed information, including bike availability, station capacity, and station location.
+\end{itemize}
+
+\subsection{Route Planning \& Directions}
+\subsubsection*{Web App}
+From the main interface, input your \textbf{Starting Location} and \textbf{Destination} in the provided fields. The system will provide \textbf{bike-friendly routes} using the \textbf{Google Maps Directions API} or the \textbf{ArcGIS API} for optimal bike paths. You can view the \textbf{distance}, \textbf{duration}, and \textbf{route details}, including step-by-step instructions.
+
+\subsubsection*{Android App}
+On the \textbf{Route Planning Screen}, enter your starting point and destination. The app will display available routes, including information on \textbf{estimated travel time} and \textbf{route elevation}. The app also decodes \textbf{polyline paths} to show the route on the map.
+
+\subsection{Historical Data Visualization}
+\subsubsection*{Web App}
+You can access \textbf{historical bike usage data} by selecting the "Historical Data" section. This will allow you to visualize trends such as:
+\begin{itemize}
+    \item \textbf{Total number of bike rides per station}
+    \item \textbf{Popular routes}
+    \item \textbf{Bike availability over time}
+    \item Use interactive graphs to filter by date range and visualize data in \textbf{CSV} format.
+\end{itemize}
+
+\subsubsection*{Android App}
+Access historical data visualization via the \textbf{Data tab}. The app will show trends like the \textbf{number of rides}, and you can filter by specific stations or time frames.
+
+\subsection{Accident Visualization}
+\subsubsection*{Web App}
+Access \textbf{Bicycle Accident Data} from the "Accident Visualization" section on the map. The system displays:
+\begin{itemize}
+    \item \textbf{Accident hotspots} (areas with frequent accidents).
+    \item \textbf{Incident markers} showing where accidents occurred, along with details such as time, location, and severity.
+\end{itemize}
+
+\subsubsection*{Android App}
+The \textbf{Accident Map} shows real-time and historical accident data as markers or heatmaps. Users can tap on accident locations to get more details about the incident.
+
+\section{User Interface Walkthrough}
+
+\subsection{Web App Interface}
+\begin{itemize}
+    \item \textbf{Map View}: The primary interface shows an interactive map with bike station markers and real-time bike availability.
+    \item \textbf{Route Planner}: Users can enter starting and ending locations to plan bike routes.
+    \item \textbf{Sidebar}: Displays bike availability statistics, accident data, and historical data options.
+    \item \textbf{Navigation Bar}: Allows access to various features like \textbf{Account Settings}, \textbf{History}, and \textbf{Support}.
+\end{itemize}
+
+\subsection{Android App Interface}
+\begin{itemize}
+    \item \textbf{Home Screen}: Displays a map showing bike stations with available bikes.
+    \item \textbf{Route Planning}: Tap on the "Plan Route" button to input your journey and see bike-friendly routes.
+    \item \textbf{Data Tab}: Access historical data visualizations for bike trends and accident hotspots.
+    \item \textbf{Menu}: Provides access to \textbf{Account Settings}, \textbf{Help \& Support}, and \textbf{Logout}.
+\end{itemize}
+
+\section{Managing Your Account}
+
+\subsection{Creating and Managing Your Account}
+\begin{enumerate}
+    \item \textbf{Sign Up}: On both the web and Android app, click on the \textbf{Sign Up} button, provide your personal information, and create a password.
+    \item \textbf{Login}: Use your email and password to sign in.
+    \item \textbf{Profile Settings}: You can update your profile, change your password, and view your \textbf{trip history} and \textbf{bike usage statistics} under \textbf{Account Settings}.
+\end{enumerate}
+
+\subsection{Viewing Trip History (Web and Android)}
+\begin{itemize}
+    \item \textbf{Web App}: In the "History" section, you can view all trips taken, including details like start and end times, stations used, and trip duration.
+    \item \textbf{Android App}: The trip history is available in the \textbf{History Tab}, where you can filter trips by date and station.
+\end{itemize}
+
+\section{Advanced Features}
+
+\subsection{Customizing Bike Routes}
+\begin{itemize}
+    \item \textbf{Web App}: Use the \textbf{Route Planner} to adjust your journey. You can select preferences such as:
+    \begin{itemize}
+        \item Avoiding certain areas
+        \item Customizing stops along the way
+        \item Selecting faster or more scenic routes
+    \end{itemize}
+    \item \textbf{Android App}: After entering your destination, customize your route by selecting from suggested paths or adjusting based on bike lane availability.
+\end{itemize}
+\end{document}

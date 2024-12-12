@@ -1,0 +1,100 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+\title{Design Specification for Metro Bike Share Project}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Project Breakdown}
+The following section provides a detailed breakdown of every page, part, and tool involved in the Metro Bike Share project.
+
+\subsection*{1. Web Application}
+\begin{itemize}
+    \item \textbf{Homepage}: Displays the map of available bike stations in real-time, showing bike availability and station locations. Allows users to plan routes, view accident data, and check historical data.
+    \item \textbf{Route Planning Page}: A page where users can input their starting and ending locations and get bike-friendly routes. Includes distance, duration, and step-by-step instructions for the journey.
+    \item \textbf{Historical Data Visualization Page}: Displays charts and graphs for historical bike data such as usage trends, popular routes, and bike availability over time. Allows users to filter by date ranges.
+    \item \textbf{Accident Visualization Page}: Displays accident hotspots and markers on a map, allowing users to view accident data on bike routes.
+    \item \textbf{Account Settings Page}: Allows users to view and edit their account information, including trip history and personal settings.
+\end{itemize}
+
+\subsection*{2. Android Application}
+\begin{itemize}
+    \item \textbf{Home Screen}: Shows the map with available bikes and stations, allowing users to view real-time bike availability.
+    \item \textbf{Route Planning Screen}: Allows users to input starting and ending points to receive bike-friendly routes. Includes additional features such as adjusting routes based on bike lane availability.
+    \item \textbf{Historical Data Screen}: Displays data visualizations for bike trends and accident hotspots. Users can filter data by time or location.
+    \item \textbf{Menu Screen}: Provides access to account settings, help/support, and logout options.
+\end{itemize}
+
+\subsection*{3. Tools and APIs}
+\begin{itemize}
+    \item \textbf{Google Maps JavaScript API}: Used for rendering maps, calculating routes, and displaying bike stations.
+    \item \textbf{ArcGIS JavaScript API}: Used for displaying and analyzing spatial data, including accident hotspots and historical bike data.
+    \item \textbf{CSV Data Handling}: Used for importing, manipulating, and visualizing Metro Bike Share historical data.
+    \item \textbf{Firebase/Backend Services}: Used for managing user data, including login, trip history, and real-time bike availability.
+\end{itemize}
+
+\newpage
+
+\section*{Snapshot Objectives}
+
+\subsection*{i. Start Objective}
+At the start of the project, the primary objectives were to establish a clear understanding of the Metro Bike Share system and its real-time functionality. This included:
+\begin{itemize}
+    \item Familiarizing with the Google Maps and ArcGIS APIs to implement maps and routes.
+    \item Understanding how to fetch and display real-time data about bike availability at stations.
+    \item Designing wireframes for the web and mobile applications.
+    \item Setting up the basic backend architecture for handling user data, including authentication and bike station data.
+\end{itemize}
+These objectives were crucial for laying the foundation for the project and ensuring that future tasks would align with the goals of real-time bike sharing and visualization.
+
+\subsection*{ii. 1st Checkpoint Objective}
+By the first checkpoint, the following tasks were completed:
+\begin{itemize}
+    \item Implemented the core structure for the web application and Android app.
+    \item Integrated the Google Maps API to display real-time bike availability on the map.
+    \item Established backend services for user authentication and session management.
+\end{itemize}
+New tasks added at this stage include:
+\begin{itemize}
+    \item Implementing route planning features in both the web and Android apps, allowing users to input start and end locations.
+    \item Initiating the historical data page for the web app, where users can visualize trends in bike usage.
+    \item Integrating accident data into the map, displaying accident hotspots based on historical information.
+\end{itemize}
+
+\subsection*{iii. 2nd Checkpoint Objective}
+By the second checkpoint, the following tasks were completed:
+\begin{itemize}
+    \item Finalized the route planning functionality on both the web and Android apps, allowing users to view optimized bike routes.
+    \item Completed the historical data visualization page for the web app with CSV file parsing and filtering functionality.
+    \item Accident visualization functionality was fully integrated on the web app, with users able to view heatmaps of bike accidents.
+\end{itemize}
+New tasks added at this stage include:
+\begin{itemize}
+    \item Implementing a user-friendly interface to manage personal accounts, including trip history and settings.
+    \item Enhancing the accident visualization tool with more granular filters (e.g., accident severity, date range).
+    \item Finalizing backend systems to handle real-time data updates for bike availability and accident reporting.
+\end{itemize}
+
+\subsection*{iv. Due Date Checkpoint Objective}
+By the due date, the following tasks were completed:
+\begin{itemize}
+    \item Both the web and mobile applications were fully functional, with real-time bike station availability, route planning, historical data visualization, and accident visualization working as intended.
+    \item Backend services for real-time data synchronization were stable, with minimal latency.
+    \item User interface was fully responsive and tested across different devices, ensuring smooth interaction on both desktop and mobile platforms.
+\end{itemize}
+Future work includes:
+\begin{itemize}
+    \item Finalizing the integration of advanced features such as predictive bike availability and personalized recommendations.
+    \item Conducting a final round of testing and bug fixes across both platforms to ensure stability.
+    \item Potentially adding new features based on user feedback, such as in-app bike rental options and expanded geographic coverage.
+\end{itemize}
+
+\end{document}
+
