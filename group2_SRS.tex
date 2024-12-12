@@ -1,0 +1,144 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{tocloft}
+
+\begin{document}
+
+% Cover Page
+\begin{titlepage}
+    \centering
+    {\Huge \textbf{Software Requirement Specification (SRS)}}\\
+    \vspace{2cm}
+    \textbf{Team Name: Group 2}\\
+    
+    \textbf{Jacob Vasquez, Francis Agyemang, Dominick Daito Jr. , Jolen Reid }\\
+    \vspace{1cm}
+    \textbf{Date: December 5, 2024}\\
+\end{titlepage}
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+% Version Description
+\section*{Version Description}
+\begin{longtable}{|c|p{8cm}|c|}
+\hline
+\textbf{Version Number} & \textbf{Description} & \textbf{Date Added} \\
+\hline
+1.0 & Initial draft & December 5, 2024 \\
+2.0 & Initial draft & December 12, 2024 \\
+
+\hline
+\end{longtable}
+
+% Sections
+\section{Introduction}
+\subsection{Purpose of the Document}
+This document will in detail, explain how the functions of this application will perform. 
+\begin{itemize}
+    \item Metro Bike Share Real Time Web Application
+    \item Bicycle Accident Visualization
+    \item Metro Bike Share Historical Data Visualization
+    
+\end{itemize}
+\subsection{Intended Audience}
+Main audience of this document are developers, testers, investors. This is organized by sections of user, software interfaces. This SRS Is organized by sections and includes divisions for each application pertaining to this SRS. For Developers it is important to understand software requirements, including programming languages and API's. 
+\subsection{Overview of the Software}
+Web Application, allows for the bike pathing to be visualized and seen by the user. This will fetch data through the Metro API, so that safest pathing is made possible. As for android Application, it will be the Web but condensed so that it is ease of use and less taxing on cellular phones/their data. Making this ease of use will allow a bicycle to be more feasible, so that more Angelinos . 
+
+\section{External Interface Requirements}
+\subsection{User Interface}
+Users will be able to open the application and pick a destination within local Los Angeles for their bike pathing needs. It will show them the best route at discretion of the applications algorithm. GeometryPolygon will be utilized to render activities on the bike paths for better perspective during bike pathing. 
+\begin{enumerate}
+    \item Metro Bike Share Real Time
+    \begin{enumerate}
+        \item Metro Bike Share real time data shall be used to used to create station markers on the map.
+        \item User Location button will prompt the user for their location.
+        \item Reset Map Button to relocate interface to user location
+        \item Clicking on a station marker will display directions and a 'poly' line of how to get from the user location to the referenced station.
+        \item Google Map functionality will be optimized.
+        \item Clicking off a station marker will close its info window
+    \end{enumerate}
+    \item Bicycle Accident Visualization
+    \begin{enumerate}
+        \item Bicycle Accident Feature Layer will use esriGeometryPolygon to render related accidents on a map.
+        \item Bikeway Map Layer will use esriGeometryPolygon for rendering polygon areas on the map.
+        \item Layer list will allow the user to turn layers off and on for enhanced usage.
+        \item Popout widget will allow the user to filter the display of each bikepath.
+        \item A pop out widget will allow the user to filter the display of bicycle accident years.
+        \item Clicking a bicycle accident marker shall provide details about the accident.
+        
+    \end{enumerate}
+    \item Metro Bike Share histroical Visualizaiton 
+    \begin{enumerate}
+        \item Metro Bike Share data will be used to map station markers.
+        \item Clicking on a marker shall display information about the station such as average trips throughout the week.
+        \item Choosing to filter by day shall change the map legend to show by hours instead of days.
+        \item A drop down menu shall let the user filter the marker by day of the week.
+        \item Application has a legend at the bottom right which user can scroll through. 
+    \end{enumerate}
+\end{enumerate}
+\subsection{Software Interfaces}
+Most of the information will be fetched by the Metro API where users can receive active feed and adjust their bicycle according to the data presented by Metro and their API. The API being used will be the Metro's Bike Share Real time data displaying a map that will be referred to as a Metro Bike Share Real Time. This map will fetch geojson data from the Metro's Bike Share web app. ArcGIS Online JS will also be utilized so that further application ideas can be implemented.
+\begin{enumerate}
+    \item Metro Bike Share Real Time
+    \begin{enumerate}
+        \item Loading of the page will initiate an API call to the MBSRT data set.
+        \item Map induced by Javascript API will visualize data and create map features.
+    \end{enumerate}
+    \item Bicycle Accident Visualization
+    \begin{enumerate}
+        \item ArcGIS Online JS API shall be used to visualize bicycle accidents and designated bikeways
+        \item The Feature Layer from Los Angeles Geohub will be used for bicycle accident data.
+        \item Map layer from Los Angeles Geohub will be used for designated bikeways.
+        \item Map layer from Los Angeles Geohub will be used for the 'polygon' layer on the map.
+    \end{enumerate}
+    \item Metro Bike Share Historical Data Visualization
+    \begin{enumerate}
+        \item ArcGIS Online JS API will be used to visualize metro bike share stations trips.
+        \item The feature layer created from ArcGIS Online services shall be used for metro bike historical data.
+        \item The Map Layer from ArcGIS Online services shall be used for polygon layer on the map.
+    \end{enumerate}
+\end{enumerate}
+
+\section{Legal and Ethical Considerations}
+\subsection{Data Storage and Privacy}
+User data will be expelled as there is no current need to store any data. It is strictly a convenience application.
+\subsection{Legal/Ethical Issues}
+Possible legal ramifications arise from the possibility that users may still crash and then blame it on the applications pathing. However, there will be disclaimers before hand that let the user know, and prevent any legal action towards the application.
+
+\section{Glossary}
+\begin{longtable}{|c|p{10cm}|}
+\hline
+\textbf{Acronym} & \textbf{Definition} \\
+\hline
+UI & User Interface \\
+API & Application Programming Interface \\
+MBSRT & Metro Bike Share Real Time \\
+DB & Database \\
+Javascript & A programming heavily used for web applications\\
+Python & A general-purpose programming language that can be used to create web application and data analytics.\\
+ArcGis & Esri’s all-in-one solution to work with geographic information.\\
+AISC & A.I. for Smart Cities: Pedestrian and Bicycle Safety \\
+SRS & Software Requirements Specifications \\
+SDD & Software Design Document \\
+
+
+\hline
+\end{longtable}
+
+\section{References}
+\begin{itemize}
+    \item Google Maps API - https://developers.google.com/maps/documentation/javascript/tutorial
+    \item Jupyter Notebook - Data Organization and Manipulation
+    \item ArcGIS All references to ArcGIS services - https://doc.arcgis.com/en
+    \item Geohub Data collection for the city of Los Angeles - http://geohub.lacity.org/
+    \item Metro Bike Data Anonymized Metro Bike Share trip data for data collection - https://bikeshare.metro.net/about/data/
+\end{itemize}
+
+\end{document}
